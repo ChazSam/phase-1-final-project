@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="module" src="index.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Popsicle App</title>
+</head>
+<body >
+
+    <h1 class="random-letter">
+        Make Your Own Popsicle 
+        <p></p>
+        <img src="https://t4.ftcdn.net/jpg/04/79/03/87/360_F_479038737_60GK1bwdVHruGqCDqlgGdchP4YD3p7oQ.jpg"/>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fla_Vor_Ice.jpg"/>
+        <img src="https://media.istockphoto.com/id/155379340/photo/popsicles-in-rainbow-colors.jpg?b=1&s=612x612&w=0&k=20&c=a8lQDV36nw_e0J3JY8tSzFiX3XjS3plgntNwqxJn7Q4="/>
+    </h1>
+
+    <h2>
+        <div>
+            <select id="pop-color">
+                <option value="Red">Red</option>
+                <option value="Orange">Orange</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Green">Green</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Rainbow">Rainbow</option>
+                <option value="White">White</option>
+            </select>
+
+            <select id="pop-flavor">
+                <option value="Cherry">Cherry</option>
+                <option value="Orange">Orange</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Apple">Apple</option>
+                <option value="Blueberry">Blueberry</option>
+                <option value="Grape">Grape</option>
+                <option value="Lemon">Lemon</option>
+                <option value="Vanilla">Vanilla</option>
+                <option value="Chocolate">Chocolate</option>
+            </select>
+
+            <select id="pop-type">
+                <option value="Wide">Wide</option>
+                <option value="Freeze Pop">Freeze Pop</option>
+                <option value="Thin">Thin</option>
+            </select>
+
+            <input type="submit" id="popsicle-choice" value="Create"/>
+
+        </div>
+            <p ></p>
+        <div>
+            <input type = "text" id = "pokemon-search" placeholder = "Pokémon's Name or Dex #">
+            <select id="poke-list-dropdown">
+                <option value="0">Choose A Pokemon</option>
+            </select>
+            <input type = "submit" id = "pokemon-find" value = "Get Pokémon"/>
+        </div>
+        <p></p>
+        <div>
+            <input type="text" id="set-up" name="set-up" placeholder="Set-Up"/>
+            <input type="text" id="punchline" name="punchline" placeholder="Punchline"/>
+            <input type="submit" id="add-joke" name="add-joke" value="Add Joke"/>
+        
+            <div id="list"></div>
+            <p></p>
+        </div>
+    
+        <input type="submit" id="random-joke"  value="Random joke?"/>
+        <input disabled type="submit" id="save-joke" value = "Save Joke"/>
+
+        <p id="setup-add"></p>
+        <p id="punchline-add"></p>
+    </h2>
+    <p></p>
+    <h3>
+        <div class="container" id="preview">Preview:
+            <p id="popsicle"></p>
+            <p></p>
+            <p></p>
+            <img id="poke-img">
+            <p id="poke-name"></p>
+            <p></p>
+            <p id="preview-setup"></p>
+            <p id="preview-punchline"></p>
+            <input type="submit" id="create-popsicle" value="Create Popsicle"/>
+        </div>
+    </h3>
+</body>
+</html>
