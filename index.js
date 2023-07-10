@@ -66,18 +66,11 @@ getPokemon.addEventListener('click', function(){
     let foundPokemonList = pokeListDropdown.options[pokeListDropdown.selectedIndex].textContent // retrieves the name from the dropdown list
 
 
-    console.log(foundPokemonDex)
-    console.log(foundPokemonName)
-    
-    if(foundPokemonName||foundPokemonDex){
-        callPokemon(foundPokemonDex.url, foundPokemonDex.name)  
-        // if(foundPokemonDex){  // searches by index number 
-        //     //let pokeName = foundPokemonDex.name
-        //     callPokemon(foundPokemonDex.url, foundPokemonDex.name /*pokeName*/)  
+        if(foundPokemonDex){  // searches by index number 
+            callPokemon(foundPokemonDex.url, foundPokemonDex.name)  
         
-        // }else if(foundPokemonName){ //searches by name
-        //     //let pokeName = foundPokemonName.name
-        //     callPokemon(foundPokemonName.url,foundPokemonName.name /* pokeName*/)
+        }else if(foundPokemonName){ //searches by name
+            callPokemon(foundPokemonName.url,foundPokemonName.name)
         
         }else if(foundPokemonList !== "Choose A Pokemon"){ // searches from dropdown menu
            let pokedata = pokeList.find(pokemon => pokemon.name === foundPokemonList)
@@ -107,19 +100,19 @@ addJokeButton.addEventListener("click", function(){ // updates the preview with 
 
  })
 
-let setupP = document.getElementById('setup-add') // 
-let punchlineP = document.getElementById('punchline-add')
+const setupP = document.getElementById('setup-add') // setup preview p
+const punchlineP = document.getElementById('punchline-add') // punchline preview p
 
-let randomJokeButton = document.getElementById("random-joke")
-let saveJokeButton = document.getElementById("save-joke")
+const randomJokeButton = document.getElementById("random-joke") // random joke button
+const saveJokeButton = document.getElementById("save-joke") // save joke button
 
-let previewSetup = document.getElementById('preview-setup')
-let previewPunchline = document.getElementById('preview-punchline')
+const previewSetup = document.getElementById('preview-setup') // bottom setup preview 
+const previewPunchline = document.getElementById('preview-punchline') // bottom puncline preview
 
 
 randomJokeButton.addEventListener("click", function(){ // calls the joke api, changes random joke button to New Joke, and enables the save joke button.
     getJokes()
-    if(randomJokeButton.value !== "New Joke"){
+    if(randomJokeButton.value !== "New Joke"){ // changes random joke to new joke
         randomJokeButton.value = "New Joke"
         saveJokeButton.disabled = false;
     }
