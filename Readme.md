@@ -12,7 +12,7 @@ If nothing from the last paragraph makes sense, here is a link of the pokedex wi
 The last selection is for optional jokes to add to the popsicle stick or wrapper. The first part is to enter a setup and a punchline to a joke. When it is filled out, click add joke to add it to the list. If the user doesn't want to come up with their own joke, they can pull a random one from the random joke api.
 If they like the joke, they can add it by clicking save joke and it will be entered into the preview. The program then sends the third part of the popsicle back to the global variable with the setup and punchline of the joke. 
 
-Once each part is selected, it will show at the bottom of the screen with a preview. Finally the create popsicle will ask the user if they are fine with their selection and if they are, it will combine each three parts of the popsicle and return it as one object. 
+Once each part is selected, it will show at the bottom of the screen with a preview. Next, the create popsicle will ask the user if they are fine with their selection and if they are, it will combine each three parts of the popsicle and turn it into a single variable. Finally, it posts the popsicleFinal variable into the db.json server where it can be picked up by the factory to create the popsicle. 
 
 
 Popsicle pics -

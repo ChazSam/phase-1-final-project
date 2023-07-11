@@ -8,13 +8,15 @@
     <title>Custom Popsicle App</title>
 </head>
 <body >
-
+<div id="container">
     <h1 class="random-letter">
         Make Your Own Popsicle 
         <p></p>
-        <img src="https://t4.ftcdn.net/jpg/04/79/03/87/360_F_479038737_60GK1bwdVHruGqCDqlgGdchP4YD3p7oQ.jpg"/>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fla_Vor_Ice.jpg"/>
-        <img src="https://media.istockphoto.com/id/155379340/photo/popsicles-in-rainbow-colors.jpg?b=1&s=612x612&w=0&k=20&c=a8lQDV36nw_e0J3JY8tSzFiX3XjS3plgntNwqxJn7Q4="/>
+        <div id="imageContainer">
+            <img src="https://t4.ftcdn.net/jpg/04/79/03/87/360_F_479038737_60GK1bwdVHruGqCDqlgGdchP4YD3p7oQ.jpg" id = "image1" title="Wide Popsicle" class="image"/>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Fla_Vor_Ice.jpg" id = "image2" title="Freeze Pop" class="image"/>
+            <img src="https://media.istockphoto.com/id/155379340/photo/popsicles-in-rainbow-colors.jpg?b=1&s=612x612&w=0&k=20&c=a8lQDV36nw_e0J3JY8tSzFiX3XjS3plgntNwqxJn7Q4=" id = "image3" title="Thin Popsicle" class="image"/>
+        </div>
     </h1>
 
     <h2>
@@ -89,5 +91,6 @@
             <input type="submit" id="create-popsicle" value="Create Popsicle"/>
         </div>
     </h3>
+</div>
 </body>
 </html>

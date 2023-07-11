@@ -5,7 +5,20 @@ const popsicleChoice = document.getElementById('popsicle-choice')
 const underPopsicle = document.getElementById('popsicle') 
 let popsicle1 
 
-popsicleChoice.addEventListener('click', function(){ 
+const images = document.querySelectorAll(".image");
+
+images.forEach((image) => {
+  image.addEventListener("mouseover", () => {
+    image.style.transform = "translateY(-20px)"
+  });
+
+  image.addEventListener("mouseout", () => {
+    image.style.transform = "translateY(0)"
+  })
+})
+
+
+popsicleChoice.addEventListener('click', () => { 
      popsicle1 = {
         "color": popColor.value,
         "flavor": popFlavor.value,
@@ -14,7 +27,6 @@ popsicleChoice.addEventListener('click', function(){
     underPopsicle.innerText = `${popsicle1.color} ${popsicle1.flavor} ${popsicle1.type}` 
     return popsicle1 
 })
-
 
 
 let popsicle2 
@@ -33,7 +45,7 @@ let pokeList = await fetch("https://pokeapi.co/api/v2/pokemon/?limit=1010")
     console.log("error", err)
 })
 
-pokeList.map(item =>{ 
+pokeList.map(item => { 
     let pokeOption = document.createElement("option") 
     pokeOption.textContent = item.name
     pokeListDropdown.appendChild(pokeOption) 
@@ -58,7 +70,7 @@ pokeList.map(item =>{
     })
 }
 
-getPokemon.addEventListener('click', function(){
+getPokemon.addEventListener('click', () => {
     let foundPokemonDex = pokeList[pokeSearch.value-1] 
     let foundPokemonName = pokeList.find(pokemon => pokemon.name === pokeSearch.value.toLowerCase());
     let foundPokemonList = pokeListDropdown.options[pokeListDropdown.selectedIndex].textContent
@@ -84,7 +96,7 @@ const setupBox = document.getElementById("set-up");
 const punchlineBox = document.getElementById("punchline") 
 const addJokeButton = document.getElementById("add-joke"); 
 
-addJokeButton.addEventListener("click", function(){ 
+addJokeButton.addEventListener("click", () =>{ 
     previewSetup.innerText = setupBox.value
     previewPunchline.innerText = punchlineBox.value
 
@@ -105,7 +117,7 @@ const previewSetup = document.getElementById('preview-setup')
 const previewPunchline = document.getElementById('preview-punchline') 
 
 
-randomJokeButton.addEventListener("click", function(){ 
+randomJokeButton.addEventListener("click", () => { 
     getJokes()
     if(randomJokeButton.value !== "New Joke"){ 
         randomJokeButton.value = "New Joke"
@@ -124,7 +136,7 @@ function getJokes() {
     console.log("error", err)
 })}
 
-saveJokeButton.addEventListener('click', function(){ 
+saveJokeButton.addEventListener('click', () => { 
     previewSetup.textContent = setupP.textContent 
     previewPunchline.textContent = punchlineP.textContent
 
@@ -139,13 +151,10 @@ saveJokeButton.addEventListener('click', function(){
 })
 
 
-let popsicleFinal 
-const popsicleButton = document.getElementById("create-popsicle"); 
-
-popsicleButton.addEventListener('click', function(){
+const popsicleButton = document.getElementById("create-popsicle").addEventListener('mouseup',() => {
 
     if(popsicle2 === undefined){
-        popsicle2 ={
+        popsicle2 = {
             "name": 'none',
             "image": 'none'
         }
@@ -158,20 +167,34 @@ popsicleButton.addEventListener('click', function(){
         }
     }
 
-    if(popsicle1 === undefined){  
+    if(popsicle1 === undefined) {  
         alert("Please enter a Popsicle.")
-    } else{
+    } else {
         let result = confirm("Are you sure you want this popsicle?") 
             if(result){
 
-                popsicleFinal = {...popsicle1, ...popsicle2, ...popsicle3} 
-
-                console.log(popsicleFinal) 
-
+                let popsicleFinal = {...popsicle1, ...popsicle2, ...popsicle3} 
+       
                 alert("You will recieve your popsicle soon!")
 
-                return popsicleFinal 
-            }
-    }
-})
+                const configurationObject = { 
+ 
+                    method: "POST",
+                    headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json",
+                    },
+                    body: JSON.stringify(popsicleFinal),
+                
+                };
 
+                fetch("http://localhost:3000/popsicle", configurationObject)    
+                .catch((err)=>{
+                console.log("error", err)
+                })   
+            }
+
+    }
+
+
+})
