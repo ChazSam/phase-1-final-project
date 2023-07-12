@@ -1,5 +1,14 @@
 {
   "popsicle": [
-
+    {
+      "color": "Green",
+      "flavor": "Blueberry",
+      "type": "Freeze Pop",
+      "name": "abra",
+      "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+      "setup": "What do you call an eagle who can play the piano?",
+      "punchline": "Talonted!",
+      "id": 1
+    }
   ]
 }
